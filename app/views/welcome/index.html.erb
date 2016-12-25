@@ -1,77 +1,93 @@
-<!-- Page Content -->
-<div class="container">
+<% if current_user %>
 
-    <!-- Introduction Row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">About Us
-                <small>It's Nice to Meet You!</small>
-            </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
-        </div>
-    </div>
+<h3>Welcome: <%= current_user.email %></h3>
 
-    <!-- Team Members Row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Our Team</h2>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center">
-            <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center">
-            <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center">
-            <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center">
-            <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center">
-            <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center">
-            <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-    </div>
+<% else %>
 
-    <hr>
+<div class="jumbotron">
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-    </footer>
+  <h2>Welcome to the Photo Management App!</h2>
+
+  <p class="lead">
+
+    You'll love managing your Photos with our application. Sign up!
+
+  </p>
 
 </div>
-<!-- /.container -->
+
+<div class="row">
+
+  <div class="plans clearfix">
+
+    <div class="col-lg-3 col-lg-offset-3 plan">
+
+      <h2>Premium Plan</h2>
+
+      <div class="price pull-right">
+
+        Price: $10
+
+      </div>
+
+      <div class="features">
+
+        <ul>
+
+          <li>Unlimited Image Uploads</li>
+
+          <li>Responsive design</li>
+
+          <li>Access anywhere</li>
+
+        </ul>
+
+      </div>
+
+      <p>
+
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
+
+      </p>
+
+    </div>
+
+    <div class="col-lg-3 plan">
+
+      <h2>Amaze Plan</h2>
+
+      <div class="price pull-right">
+
+        Price: $20
+
+      </div>
+
+      <div class="features">
+
+        <ul>
+
+          <li>Unlimited Image Uploads</li>
+
+          <li>Responsive design</li>
+
+          <li>Access anywhere</li>
+
+          <li class='extra'>Unlimited projects</li>
+
+        </ul>
+
+      </div>
+
+      <p>
+
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<% end %>
