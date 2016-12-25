@@ -49,7 +49,6 @@ $(document).ready(function() {
       $form.get(0).submit();
 
     }
-
     return false;
   };
   show_error = function (message) {
