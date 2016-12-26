@@ -35,7 +35,6 @@ class RegistrationsController < Devise::RegistrationsController
           respond_with resource
         end
       end
-    end
 
     protected
 
@@ -44,3 +43,4 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
   end
+end
