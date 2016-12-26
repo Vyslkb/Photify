@@ -1,20 +1,30 @@
 $(document).ready(function() {
+
   var show_error, stripeResponseHandler, submitHandler;
 
   submitHandler = function (event) {
-    var $form = $event(.target);
+
+    var $form = $(event.target);
+
     $form.find("input[type=submit]").prop("disabled", true);
 
-    // If Stripe was initialized correctly this will create a token using credit card information
+    //If Stripe was initialized correctly this will create a token using the credit card info
+    
     if(Stripe){
+
       Stripe.card.createToken($form, stripeResponseHandler);
+
     } else {
-      show_error("Failed to load credit card processing functionality, Please reload this page in your browser.")
+
+      show_error("Failed to load credit card processing functionality. Please reload this page in your browser.")
+
     }
+
     return false;
+
   };
 
-  $(#.cc_form).on('submit', submitHandler);
+  $(".cc_form").on('submit', submitHandler);
 
   stripeResponseHandler = function (status, response) {
 
@@ -49,8 +59,11 @@ $(document).ready(function() {
       $form.get(0).submit();
 
     }
+
     return false;
+
   };
+
   show_error = function (message) {
 
     if($("#flash-messages").size() < 1){
@@ -66,4 +79,5 @@ $(document).ready(function() {
     return false;
 
   };
+
 });
