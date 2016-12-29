@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: photify_production
-  username: photify
+  username: ubuntu
   password: <%= ENV['PHOTIFY_DATABASE_PASSWORD'] %>
